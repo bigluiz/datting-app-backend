@@ -20,7 +20,9 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const JWT_SECRET = process.env.JWT_SECRET
 
-app.use(cors({ origin: process.env.FRONTEND_URL }))
+app.use(cors({ 
+  origin: ["https://datting-app-backend.onrender.com"]
+}))
 app.use(express.json())
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
